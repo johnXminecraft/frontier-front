@@ -1,0 +1,117 @@
+
+/* dark color palette */
+#root {
+    --background: #1a1e1f;
+    --decoration: #404d53;
+    --text-primary: #fff;
+    --text-secondary: #fff;
+    --accent: #404d53;
+}
+
+/* main container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    min-width: 100%;
+}
+.content {
+    flex: 1;
+}
+
+/* transition */
+* {
+    transition: all 0.15s ease-in-out;
+}
+
+/* text */
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--text-primary) !important;
+}
+.form-label {
+    color: var(--text-primary) !important;
+}
+.fs-5 {
+    color: var(--text-primary) !important;
+}
+
+/* header */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  max-height: 20vh;
+  width: 100%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.logo {
+  max-height: 20vh;
+  fill: var(--text-primary);
+}
+
+/* search bar */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  height: 5vh;
+}
+
+/* bs forms */
+.full-width-form {
+  width: 100vw;
+  height: 5vh;
+  margin-bottom: 2vh;
+}
+.search-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.search-container {
+  width: 100%;
+  height: 100%;
+}
+.search-container:focus-within .search-icon {
+  opacity: 0;
+}
+.search-icon {
+  position: absolute;
+  color: var(--text-primary);
+  pointer-events: none;
+  font-size: 150%;
+  margin-left: 0.5%;
+  transition: opacity 0.2s ease;
+}
+.form-control {
+  background-color: var(--decoration);
+  color: var(--text-primary);
+  border-color: var(--decoration);
+}
+.form-control:hover {
+  background-color: var(--decoration);
+  color: var(--text-primary);
+  border-color: var(--decoration);
+  box-shadow: 0 0 1vh 0.5vh rgba(255, 255, 255, 0.7);
+}
+.form-control:focus {
+  background-color: var(--decoration);
+  color: var(--text-primary);
+  border-color: var(--decoration);
+  box-shadow: 0 0 1vh 0.5vh rgba(255, 255, 255, 0.7);
+}
+
+/* footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+}
