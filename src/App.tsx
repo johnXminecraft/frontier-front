@@ -43,7 +43,26 @@ function App() {
         </Routes>
       </Container>
       <Container className="footer d-flex w-100">
-          <h5>&copy; 2025 Frontier</h5>
+        <Container className="logo-text-container-footer">
+          <Container className="logo-container-footer">
+            <LogoFrontier className="logo-footer" />
+          </Container>
+          <Container className="text-container-footer">
+            <Container className="title-footer">
+              <h5>Фронтир</h5>
+            </Container>
+            <Container className="text-footer">
+              <p>Культурно-просвітницька платформа</p>
+              <p>мілітарного спрямування</p>
+              <p>&copy; 2025 Фронтир</p>
+            </Container>
+          </Container>
+        </Container>
+        <Container className="link-container-footer">
+            <Container className="link-footer">
+              <a href="https://t.me/front_tier" className="link-footer-text">&copy;</a>
+            </Container>
+          </Container>
       </Container>
     </Container>
   )

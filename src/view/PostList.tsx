@@ -13,17 +13,26 @@ export default function PostList() {
         .catch(err => console.error("API ERROR:", err));
     }, []);
 
+    function formatDate(dateString: string) {
+        const d = new Date(dateString);
+        return d.toLocaleString(undefined, {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+        });
+    }
+
     if (!data) return <p>Loading...</p>;
 
     return (
-    <ul>
+    <>
       {data.items.map(post => (
-        <li key={post.id}>
+        <div key={post.id}>
           <h1>{post.title}</h1>
-          <h2>{post.createdAtUtc}</h2>
+          <h2>{formatDate(post.createdAtUtc)}</h2>
           <p>{post.content}</p>
-        </li>
+        </div>
       ))}
-    </ul>
+    </>
   );
 }
