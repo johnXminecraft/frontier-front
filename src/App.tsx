@@ -2,10 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from 'react';
 import { Container } from "react-bootstrap"
 import { Routes, Route } from "react-router-dom"
-import "./App.css"
+import "./css/App.css"
 import LogoFrontier from './assets/frontier-logo.svg?react';
 import LogoX from './assets/x-logo.svg?react';
-import SearchBar from './SearchBar.tsx'
+import SearchBar from './view/SearchBar.tsx'
+import PostList from "./view/PostList.tsx";
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
 
   useEffect(() => {
     // 20% chance
-    const chance = Math.random() < 0.2;
+    const chance = Math.random() < 1/1488;
     setIsSpecial(chance);
   }, []);
 
@@ -31,8 +32,7 @@ function App() {
       </Container> 
       <Container className="content">
         <Routes>
-          <Route path="/" element={<h1>Frontier</h1>} />
-          <Route path="/search" element={<h1>Search</h1>} />
+          <Route path="/" element={<PostList />} />
           <Route path="/:id">
             <Route index element={<h1>View</h1>} />
             <Route path="edit" element={<h1>Edit</h1>} />
