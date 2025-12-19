@@ -2,11 +2,12 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from 'react';
 import { Container } from "react-bootstrap"
 import { Routes, Route } from "react-router-dom"
-import "./css/App.css"
+import "./css/App.css";
 import LogoFrontier from './assets/frontier-logo.svg?react';
 import LogoX from './assets/x-logo.svg?react';
-import SearchBar from './view/SearchBar.tsx'
-import PostList from "./view/PostList.tsx";
+import SearchBar from './components/SearchBar.tsx';
+import PostList from "./components/PostList.tsx";
+import Footer from "./components/Footer.tsx"
 
 function App() {
 
@@ -42,28 +43,7 @@ function App() {
           <Route path="*" element={<h1>Fehler 404</h1>} />
         </Routes>
       </Container>
-      <Container className="footer d-flex w-100">
-        <Container className="logo-text-container-footer">
-          <Container className="logo-container-footer">
-            <LogoFrontier className="logo-footer" />
-          </Container>
-          <Container className="text-container-footer">
-            <Container className="title-footer">
-              <h5>Фронтир</h5>
-            </Container>
-            <Container className="text-footer">
-              <p>Культурно-просвітницька платформа</p>
-              <p>мілітарного спрямування</p>
-              <p>&copy; 2025 Фронтир</p>
-            </Container>
-          </Container>
-        </Container>
-        <Container className="link-container-footer">
-            <Container className="link-footer">
-              <a href="https://t.me/front_tier" className="link-footer-text">&copy;</a>
-            </Container>
-          </Container>
-      </Container>
+      <Footer />
     </Container>
   )
 }

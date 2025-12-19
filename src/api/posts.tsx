@@ -18,8 +18,10 @@ export interface ResponseFrontier {
     pageSize: number;
 }
 
-export const getPosts = (): Promise<ResponseFrontier> => {
-  return api<ResponseFrontier>(
-    "/posts?page=1&pageSize=10&published=true"
-  );
-};
+export const getPosts = (
+  page: number,
+  pageSize = 10
+): Promise<ResponseFrontier> =>
+  api<ResponseFrontier>(
+    `/posts?page=${page}&pageSize=${pageSize}&published=true`
+);
