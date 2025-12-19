@@ -8,6 +8,7 @@ import LogoX from './assets/x-logo.svg?react';
 import SearchBar from './components/SearchBar.tsx';
 import PostList from "./components/PostList.tsx";
 import Footer from "./components/Footer.tsx"
+import ViewPost from "./components/ViewPost.tsx";
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PostList />} />
           <Route path="/:id">
-            <Route index element={<h1>View</h1>} />
+            <Route index element={<ViewPost />} />
             <Route path="edit" element={<h1>Edit</h1>} />
           </Route>
           <Route path="/dev" element={<h1>Dev</h1>} />

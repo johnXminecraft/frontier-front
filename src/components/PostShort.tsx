@@ -1,16 +1,7 @@
 
 import { Container, Image } from "react-bootstrap"
 import { Link } from "react-router-dom"
-
-interface PostShortProps {
-  id: number;
-  title: string;
-  slug: string;
-  content: string;
-  published: boolean;
-  createdAt: string;
-  updatedAt: string;
-}
+import type PostProps from "../interfaces/Post.tsx"
 
 export default function PostShort({
         id, 
@@ -18,9 +9,9 @@ export default function PostShort({
         slug, 
         content, 
         published, 
-        createdAt, 
-        updatedAt
-} : PostShortProps) {
+        createdAtUtc, 
+        updatedAtUtc
+} : PostProps) {
 
     function formatDate(date: string) {
         const d = new Date(date);
@@ -57,7 +48,7 @@ export default function PostShort({
                             </p>
                         </Container>
                         <Container className="post-short-text-date-container">
-                            <p className="post-short-text-date">{formatDate(createdAt)}</p>
+                            <p className="post-short-text-date">{formatDate(createdAtUtc)}</p>
                         </Container>
                     </Container>
                 </Container>

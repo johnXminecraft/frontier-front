@@ -31,8 +31,8 @@ export default function PostList() {
           slug={post.slug}
           content={post.content}
           published={post.published}
-          createdAt={post.createdAtUtc}
-          updatedAt={post.updatedAt}
+          createdAtUtc={post.createdAtUtc}
+          updatedAtUtc={post.updatedAtUtc}
         />
       ))}
 
@@ -43,7 +43,7 @@ export default function PostList() {
           </Button>
           <h2>Сторінка {page}</h2>
           <Button className="page-selector-button" onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}>
-              Наступна
+            Наступна
           </Button>
         </Container>
       </Container>
