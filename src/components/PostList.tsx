@@ -38,11 +38,11 @@ export default function PostList() {
 
       <Container className="page-selector-wrapper">
         <Container className="page-selector-container">
-          <Button className="page-selector-button" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>
+          <Button className="frontier-button" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>
             Попередня
           </Button>
           <h2>Сторінка {page}</h2>
-          <Button className="page-selector-button" onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}>
+          <Button className="frontier-button" onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}>
             Наступна
           </Button>
         </Container>

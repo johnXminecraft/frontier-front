@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Form, Button, Card, Alert, Spinner, Container } from "react-bootstrap";
+import { Form, Button, Card, Spinner, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api/auth";
 
@@ -9,49 +9,42 @@ export default function Login() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
-
     try {
         await login(username, password);
         navigate("/");
     } catch (err) {
         console.error(err);
-        setError("Invalid username or password");
-    } finally {
-        setLoading(false);
     }
   };
 
   return (
     <Container className="dev-login-wrapper">
         <Container className="dev-login-container">
-            <Card style={{ width: "400px" }}>
+            <Card className="login-card">
                 <Card.Body>
-                    <Card.Title className="mb-4 text-center">
-                        Login
+                    <Card.Title className="login-title">
+                        <h5>Увійти</h5>
                     </Card.Title>
-
-                    {error && <Alert variant="danger">{error}</Alert>}
-
-                    <Form onSubmit={handleSubmit}>
+                    <Form className="login-form-container" onSubmit={handleSubmit}>
                         <Form.Control
                             type="text"
                             value={username}
                             onChange={e => setUsername(e.target.value)}
+                            className="login-form"
                         />
                         <Form.Control
                             type="password"
                             value={password}
                             onChange={e => setPassword(e.target.value)}
+                            className="login-form"
                         />
-                        <Button type="submit" disabled={loading}>
-                            {loading ? <Spinner /> : "Log In"}
+                        <Button type="submit" className="frontier-button login-button" disabled={loading}>
+                            {loading ? <Spinner /> : "Вхід"}
                         </Button>
                     </Form>
                 </Card.Body>

@@ -4,6 +4,7 @@ import type PostProps from "../interfaces/Post.tsx"
 import { useState, useEffect } from "react";
 import { getPostById } from "../api/posts.tsx";
 import { Container, Image } from "react-bootstrap";
+import ReactMarkdown from "react-markdown";
 
 export default function ViewPost() {
 
@@ -47,7 +48,7 @@ export default function ViewPost() {
                         <Container className="view-post-date-container">
                             <h5>{formatDate(post?.createdAtUtc)}</h5>
                         </Container>
-                        <p>{post?.content}</p>
+                        <ReactMarkdown>{post?.content}</ReactMarkdown>
                     </Container>
                     <Container className="view-post-content-side-container side-right">
                         <p className="clamp-side">{post?.content}</p>

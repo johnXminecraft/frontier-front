@@ -262,9 +262,10 @@ h1, h2, h3, h4, h5, h6, p {
   justify-content: center;
   align-items: center;
 }
-.page-selector-button,
-.page-selector-button:hover,
-.page-selector-button:focus {
+
+.frontier-button,
+.frontier-button:hover,
+.frontier-button:focus {
   background-color: var(--accent) !important;
   border-color: var(--accent) !important;
   margin-left: 3vw;
@@ -339,4 +340,42 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* create post */
+
+/* login */
+.dev-login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 100%;
+  margin-top: 5vh;
+  padding: 0;
+}
+.dev-login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 100%;
+  padding: 0;
+}
+.login-card {
+  width: 25vw;
+  background-color: var(--decoration);
+}
+.login-title {
+  text-align: center;
+  margin-bottom: 3vh;
+}
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form {
+  margin-bottom: 3vh;
+}
+.login-button {
+  margin: 0;
 }

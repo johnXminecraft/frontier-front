@@ -41,7 +41,11 @@ function App() {
           <Route path="/" element={<PostList />} />
           <Route path="/:id">
             <Route index element={<ViewPost />} />
-            <Route path="edit" element={<h1>Edit</h1>} />
+            <Route path="edit" element={
+              <RequireAuth>
+                <h1>Edit</h1>
+              </RequireAuth>
+            } />
           </Route>
           <Route path="/dev" element={
             <RequireAuth>

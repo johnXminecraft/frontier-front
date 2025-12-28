@@ -22,15 +22,6 @@ export default function PostShort({
         });
     }
 
-    /* perhaps I need it
-    function truncate(text: string, maxLength: number) {
-        if(text.length > maxLength) {
-            return text.slice(0, maxLength) + "..."
-        }
-        return text;
-    }
-    */
-
     return (
         <>
             <Link to={`/${id}`} className="post-short-link-global">

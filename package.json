@@ -19,6 +19,7 @@
     "react-router-dom": "^7.10.1",
     "react-select": "^5.10.2",
     "remark-gfm": "^4.0.1",
+    "transliteration": "^2.6.0",
     "vite-plugin-react": "^4.0.1",
     "vite-plugin-svgr": "^4.5.0"
   },
