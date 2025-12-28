@@ -35,15 +35,23 @@ export default function ViewPost() {
                     <Container className="view-post-image-container">
                         <Image fluid src="/src/assets/pics/placeholder.png" alt="Picture" />
                     </Container>
-                    <Container className="view-post-title-container">
-                        <h1>{post?.title}</h1>
-                    </Container>
-                    <Container className="view-post-date-container">
-                        <p>{formatDate(post?.createdAtUtc)}</p>
-                    </Container>
                 </Container>
                 <Container className="view-post-content-container">
-                    <p>{post?.content}</p>
+                    <Container className="view-post-content-side-container side-left">
+                        <p className="clamp-side">{post?.content}</p>
+                    </Container>
+                    <Container className="view-post-content-content-container">
+                        <Container className="view-post-title-container">
+                            <h1>{post?.title}</h1>
+                        </Container>
+                        <Container className="view-post-date-container">
+                            <h5>{formatDate(post?.createdAtUtc)}</h5>
+                        </Container>
+                        <p>{post?.content}</p>
+                    </Container>
+                    <Container className="view-post-content-side-container side-right">
+                        <p className="clamp-side">{post?.content}</p>
+                    </Container>
                 </Container>
             </Container>
         </Container>
