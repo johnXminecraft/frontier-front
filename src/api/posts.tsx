@@ -19,3 +19,15 @@ export const getPostById = (
   id: number
 ): Promise<PostProps> => 
   api<PostProps>(`/posts/${id}`);
+
+export const addPost = (
+  title: string,
+  slug: string,
+  content: string,
+  published: boolean
+): Promise<PostProps> => {
+  return api<PostProps>("/posts", {
+    method: "POST",
+    body: JSON.stringify({ title, slug, content, published }),
+  });
+};

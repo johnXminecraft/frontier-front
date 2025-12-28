@@ -9,6 +9,10 @@ import SearchBar from './components/SearchBar.tsx';
 import PostList from "./components/PostList.tsx";
 import Footer from "./components/Footer.tsx"
 import ViewPost from "./components/ViewPost.tsx";
+import CreatePost from "./components/CreatePost.tsx";
+import Dev from "./components/Dev.tsx";
+import DevLogin from "./components/DevLogin.tsx"
+import RequireAuth from "./components/RequireAuth.tsx";
 
 function App() {
 
@@ -39,8 +43,17 @@ function App() {
             <Route index element={<ViewPost />} />
             <Route path="edit" element={<h1>Edit</h1>} />
           </Route>
-          <Route path="/dev" element={<h1>Dev</h1>} />
-          <Route path="/dev/new" element={<h1>New</h1>} />
+          <Route path="/dev" element={
+            <RequireAuth>
+              <Dev />
+            </RequireAuth>
+          } />
+          <Route path="/dev/login" element={<DevLogin />} />
+          <Route path="/dev/new" element={
+            <RequireAuth>
+              <CreatePost />
+            </RequireAuth>
+          } />
           <Route path="*" element={<h1>Fehler 404</h1>} />
         </Routes>
       </Container>

@@ -321,6 +321,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .view-post-content-side-container {
   text-align: justify;
+  font-style: italic;
   background-color: var(--decoration);
   padding-top: 2vh;
   padding-left: 2vw;
