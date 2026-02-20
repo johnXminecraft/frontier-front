@@ -2,12 +2,14 @@
 import { Container, Image } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import type PostProps from "../interfaces/Post.tsx"
+import ReactMarkdown from "react-markdown";
 
 export default function PostShort({
         id, 
         title, 
         slug, 
         content, 
+        author,
         published, 
         createdAtUtc, 
         updatedAtUtc
@@ -35,8 +37,11 @@ export default function PostShort({
                         </Container>
                         <Container className="post-short-text-content-container">
                             <p className="post-short-text-content">
-                                {content}
+                                <ReactMarkdown>{content}</ReactMarkdown>
                             </p>
+                        </Container>
+                        <Container className="post-short-text-date-container">
+                            <p className="post-short-text-date">{author}</p>
                         </Container>
                         <Container className="post-short-text-date-container">
                             <p className="post-short-text-date">{formatDate(createdAtUtc)}</p>

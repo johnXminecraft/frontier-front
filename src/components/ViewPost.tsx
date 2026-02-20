@@ -39,7 +39,9 @@ export default function ViewPost() {
                 </Container>
                 <Container className="view-post-content-container">
                     <Container className="view-post-content-side-container side-left">
-                        <p className="clamp-side">{post?.content}</p>
+                        <p className="clamp-side">
+                            <ReactMarkdown>{post?.notes}</ReactMarkdown>
+                        </p>
                     </Container>
                     <Container className="view-post-content-content-container">
                         <Container className="view-post-title-container">
@@ -48,10 +50,15 @@ export default function ViewPost() {
                         <Container className="view-post-date-container">
                             <h5>{formatDate(post?.createdAtUtc)}</h5>
                         </Container>
+                        <Container className="view-post-date-container">
+                            <h5>Автор: {post?.author}</h5>
+                        </Container>
                         <ReactMarkdown>{post?.content}</ReactMarkdown>
                     </Container>
                     <Container className="view-post-content-side-container side-right">
-                        <p className="clamp-side">{post?.content}</p>
+                        <p className="clamp-side">
+                            <ReactMarkdown>{post?.notes}</ReactMarkdown>
+                        </p>
                     </Container>
                 </Container>
             </Container>

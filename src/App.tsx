@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from 'react';
 import { Container } from "react-bootstrap"
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Link } from "react-router-dom"
 import "./css/App.css";
 import LogoFrontier from './assets/frontier-logo.svg?react';
 import LogoX from './assets/x-logo.svg?react';
@@ -13,6 +13,7 @@ import CreatePost from "./components/CreatePost.tsx";
 import Dev from "./components/Dev.tsx";
 import DevLogin from "./components/DevLogin.tsx"
 import RequireAuth from "./components/RequireAuth.tsx";
+import EditPost from "./components/EditPost.tsx";
 
 function App() {
 
@@ -27,11 +28,13 @@ function App() {
   return (
     <Container className="main-container p-0 m-0 min-vh-100 h-auto w-100">
       <Container className="header">
-        <Container className="logo-container">
-          {
-            isSpecial ? <LogoX className="logo" /> : <LogoFrontier className="logo" />
-          }
-        </Container>
+        <Link to="/" className="logo-link">
+          <Container className="logo-container">
+            {
+              isSpecial ? <LogoX className="logo" /> : <LogoFrontier className="logo" />
+            }
+          </Container>
+        </Link>
         <Container fluid className="search-bar-container">
           <SearchBar />
         </Container>
@@ -43,7 +46,7 @@ function App() {
             <Route index element={<ViewPost />} />
             <Route path="edit" element={
               <RequireAuth>
-                <h1>Edit</h1>
+                <EditPost />
               </RequireAuth>
             } />
           </Route>

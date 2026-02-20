@@ -54,7 +54,6 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   justify-content: center;
   max-height: 15vh;
-  width: 100%;
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
@@ -125,6 +124,12 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 
+/* post list */
+.post-list-wrapper {
+  margin-top: 5vh;
+  padding: 0;
+}
+
 /* footer */
 .footer-wrapper {
   display: flex;
@@ -140,7 +145,7 @@ h1, h2, h3, h4, h5, h6, p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: 20vh;
+  min-height: 12vh;
   padding: 1vh;
   background-color: var(--accent);
 }
@@ -291,7 +296,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 50vw;
+  max-width: 60vw;
   padding: 0;
 }
 .view-post-image-container {
@@ -306,7 +311,7 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 .view-post-content-content-container {
-  min-width: 50vw;
+  min-width: 60vw;
   text-align: justify;
   padding-left: 2vw;
   padding-right: 2vw;

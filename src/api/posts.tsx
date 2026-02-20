@@ -24,10 +24,12 @@ export const addPost = (
   title: string,
   slug: string,
   content: string,
+  notes: string,
+  author: string,
   published: boolean
 ): Promise<PostProps> => {
   return api<PostProps>("/posts", {
     method: "POST",
-    body: JSON.stringify({ title, slug, content, published }),
+    body: JSON.stringify({ title, slug, content, notes, author, published }),
   });
 };

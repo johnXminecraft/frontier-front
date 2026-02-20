@@ -22,7 +22,7 @@ export default function PostList() {
     const totalPages = Math.ceil(data.total / data.pageSize);
 
     return (
-    <>
+    <Container className="post-list-wrapper">
       {data.items.map(post => (
         <PostShort 
           key={post.id}
@@ -30,6 +30,7 @@ export default function PostList() {
           title={post.title} 
           slug={post.slug}
           content={post.content}
+          author={post.author}
           published={post.published}
           createdAtUtc={post.createdAtUtc}
           updatedAtUtc={post.updatedAtUtc}
@@ -47,6 +48,6 @@ export default function PostList() {
           </Button>
         </Container>
       </Container>
-    </>
+    </Container>
   );
 }
