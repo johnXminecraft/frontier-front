@@ -30,7 +30,9 @@ export default function PostList() {
           title={post.title} 
           slug={post.slug}
           content={post.content}
+          notes={post.notes}
           author={post.author}
+          image={post.image}
           published={post.published}
           createdAtUtc={post.createdAtUtc}
           updatedAtUtc={post.updatedAtUtc}

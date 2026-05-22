@@ -9,11 +9,17 @@ export default function PostShort({
         title, 
         slug, 
         content, 
+        notes,
         author,
+        image,
         published, 
         createdAtUtc, 
         updatedAtUtc
 } : PostProps) {
+
+    const API_BASE = "http://localhost:5160/images/posts/";
+    const DEFAULT_IMAGE = `${API_BASE}placeholder.png`;
+    const DEFAULT_IMAGE_LOCAL = "/src/assets/pics/placeholder.png";
 
     function formatDate(date: string) {
         const d = new Date(date);
@@ -29,7 +35,15 @@ export default function PostShort({
             <Link to={`/${id}`} className="post-short-link-global">
                 <Container className="post-short-container">
                     <Container className="post-short-image-container">
-                        <Image fluid src="/src/assets/pics/placeholder.png" alt="Picture" />
+                        <Image 
+                            fluid 
+                            src={image && image !== "placeholder.png" ? `${API_BASE}${image}` : DEFAULT_IMAGE} 
+                            alt={title || "Post Image"} 
+                            onError={(e) => {
+                                // Fallback if the image URL is broken (404)
+                                (e.target as HTMLImageElement).src = DEFAULT_IMAGE;
+                            }}
+                        />
                     </Container>
                     <Container className="post-short-text-container">
                         <Container className="post-short-text-title-container">
@@ -41,7 +55,7 @@ export default function PostShort({
                             </p>
                         </Container>
                         <Container className="post-short-text-date-container">
-                            <p className="post-short-text-date">{author}</p>
+                            <p className="post-short-text-date">Автор: {author}</p>
                         </Container>
                         <Container className="post-short-text-date-container">
                             <p className="post-short-text-date">{formatDate(createdAtUtc)}</p>

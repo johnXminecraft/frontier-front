@@ -8,6 +8,14 @@
     --accent: #404d53;
 }
 
+/*#root {
+    --background: #fff;
+    --decoration: rgb(187, 187, 187);
+    --text-primary: #1a1e1f;
+    --text-secondary: #1a1e1f;
+    --accent: #bbbbbb;
+}*/
+
 /* font */
 body {
   font-family: 'IBM Plex Serif';
@@ -38,6 +46,9 @@ h1, h2, h3, h4, h5, h6, p {
     color: var(--text-primary) !important;
 }
 .fs-5 {
+    color: var(--text-primary) !important;
+}
+.form-control {
     color: var(--text-primary) !important;
 }
 
@@ -317,6 +328,12 @@ h1, h2, h3, h4, h5, h6, p {
   padding-right: 2vw;
   padding-bottom: 10vh;
 }
+.view-post-title-edit-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
 .view-post-title-container {
   padding: 0;
   margin-bottom: 2vh;
@@ -348,6 +365,38 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* create post */
+.create-post-title-container {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 3vh;
+}
+.create-form {
+  margin: 0;
+  padding: 0;
+}
+.create-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 3vh;
+}
+
+/* edit post */
+.edit-post-title-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 3vh;
+} 
+.delete-post-button,
+.delete-post-button:hover,
+.delete-post-button:focus {
+  margin: 0;
+  background-color: #534040 !important;
+}
 
 /* login */
 .dev-login-wrapper {

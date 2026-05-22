@@ -6,6 +6,7 @@ export default interface PostProps {
   content: string;
   notes: string,
   author: string;
+  image: string;
   published: boolean;
   createdAtUtc: string;
   updatedAtUtc: string;
